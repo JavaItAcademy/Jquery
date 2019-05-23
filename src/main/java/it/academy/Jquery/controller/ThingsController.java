@@ -24,7 +24,7 @@ public class ThingsController {
         return thingService.getAllThings();
     }
 
-    @CrossOrigingii
+    @CrossOrigin
     @PostMapping
     public Thing createThing(@RequestBody Thing t) {
         return thingService.addThing(t);
