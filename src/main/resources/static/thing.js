@@ -50,18 +50,22 @@ var RestPost = function () {
 	var id = $("input#thing-id").val();
 	var name = $("input#name-value").val();
 
-	console.log(id + " : " + name);
+	var secondObj = {
+		id: 123,
+		value: 123
+	};
+	var myJson = {
+		id: id,
+		value: name,
+		newObject: secondObj
+	};
 
-	var myJson = '{' +
-	'	"id": ' + id + ',' + 
-	'	"value": "' + name + '"' + 
-	'}';
-	console.log(myJson);
 	
+	console.log(myJson);
 	$.ajax({
 		type: 'POST',
 		url: prefix,
-		data: myJson,
+		data: JSON.stringify(myJson),
 		contentType: 'application/json',
 		dataType: 'json',
 		async: true,
