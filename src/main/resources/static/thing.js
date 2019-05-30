@@ -27,6 +27,7 @@ var RestGetAll = function () {
 		type: 'GET',
 		url: prefix + 'all',
 		dataType: 'json',
+		xhrFields: { withCredentials: true },
 		async: true,
 		success: function(result) {
 			console.log(result);
